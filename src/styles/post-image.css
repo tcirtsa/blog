@@ -1,0 +1,172 @@
+/* 文章图片样式优化 */
+
+/* 基础图片样式 */
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* 图片悬停效果 */
+.prose img:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-hover);
+}
+
+/* 图片容器 */
+.image-container {
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+/* 图片标题/说明 */
+.image-caption {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+/* 图片布局变体 */
+.image-wide {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-center {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-float-left {
+  float: left;
+  max-width: 50%;
+  margin: 0.5rem 1.5rem 1rem 0;
+  shape-outside: margin-box;
+}
+
+.image-float-right {
+  float: right;
+  max-width: 50%;
+  margin: 0.5rem 0 1rem 1.5rem;
+  shape-outside: margin-box;
+}
+
+/* 图片组/图库 */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.image-gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin: 0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .image-float-left,
+  .image-float-right {
+    float: none;
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+  
+  .image-center {
+    max-width: 100%;
+  }
+  
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .image-gallery img {
+    height: 180px;
+  }
+}
+
+/* 图片边框变体 */
+.image-bordered {
+  border: 1px solid var(--border-light);
+  padding: 0.5rem;
+  background: var(--bg-surface);
+}
+
+.image-polaroid {
+  padding: 0.75rem 0.75rem 2rem 0.75rem;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: rotate(var(--random-rotate, 0deg));
+}
+
+/* 图片滤镜效果 */
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+
+.filter-grayscale:hover {
+  filter: grayscale(0%);
+}
+
+.filter-blur {
+  filter: blur(3px);
+}
+
+.filter-blur:hover {
+  filter: blur(0);
+}
+
+.filter-sepia {
+  filter: sepia(70%);
+}
+
+.filter-sepia:hover {
+  filter: sepia(0%);
+}
+
+/* 图片加载动画 */
+@keyframes imageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.prose img {
+  animation: imageFadeIn 0.5s ease-out forwards;
+}
+
+/* 图片加载中状态 */
+.image-loading {
+  position: relative;
+  background: var(--bg-surface);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-loading::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

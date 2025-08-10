@@ -1,0 +1,44 @@
+{
+  "name": "blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "pnpm": ">=8.0.0"
+  },
+  "dependencies": {
+    "@applemusic-like-lyrics/react": "^0.1.5",
+    "@tailwindcss/typography": "^0.5.16",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.11.1",
+    "jsmediatags": "^3.9.7",
+    "katex": "^0.16.22",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-highlightjs": "^4.2.0",
+    "markdown-it-katex": "^2.0.3",
+    "markdown-it-toc-done-right": "^4.2.0",
+    "next": "15.4.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanitize-html": "^2.17.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/sanitize-html": "^2.16.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "15.4.2",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3"
+  }
+}
